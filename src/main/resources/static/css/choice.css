@@ -1,0 +1,25 @@
+body {
+    background: #c4ffe9;
+}
+
+p {
+    font-weight: 900;
+    font-family: Times, serif;
+    font-size: 1.7em;
+    font-variant: small-caps;
+    color: teal;
+}
+
+label.l1 {
+    font-weight: 900;
+    font-family: Times, serif;
+    font-size: 1.7em;
+    font-variant: small-caps;
+    color: teal;
+}
+
+ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}

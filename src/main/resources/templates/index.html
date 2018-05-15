@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Currency NBP Table A</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-8 offset-sm-2">
+        <a class="w3-btn w3-round-large w3-small w3-teal w3-border w3-border-white mr-2" href="/report/reportAll"><b>GENERUJ RAPORT WSZYSTKICH WALUT</b></a>
+        <a class="w3-btn w3-round-large w3-small w3-teal w3-border w3-border-white" href="/report/choice"><b>WYBIERZ WALUTY DO RAPORTU</b></a>
+        <br>
+        <table class="table">
+            <thead>
+            <th>Waluta</th>
+            <th class="text-center">Kurs z dnia poprzedniego</th>
+            <th class="text-center">Kurs aktualny</th>
+            </thead>
+            <tbody>
+            <tr th:each="c : ${currenciesMap}">
+                <div th:if="${c.getValue().get(1)} < ${c.getValue().get(0)}">
+                    <td class="td1" th:text="${c.getKey()}"></td>
+                    <td class="td1 text-center" th:text="${c.getValue().get(0)}"></td>
+                    <td class="td1 text-center" th:text="${c.getValue().get(1)}"></td>
+                </div>
+
+                <div th:if="${c.getValue().get(1)} >= ${c.getValue().get(0)}">
+                    <td class="td2" th:text="${c.getKey()}"></td>
+                    <td class="td2 text-center" th:text="${c.getValue().get(0)}"></td>
+                    <td class="td2 text-center" th:text="${c.getValue().get(1)}"></td>
+                </div>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <p>Największy wzrost (najmniejszy spadek) zanotowały:</p>
+        <br>
+        <table class="table">
+            <thead>
+            <th>Waluta</th>
+            <th class="text-center">Różnica w kursie (aktualny - poprzedni)</th>
+            </thead>
+            <tbody>
+            <tr th:each="c : ${bestCurrenciesMap}">
+                <td class="td2" th:text="${c.getKey()}"></td>
+                <td class="td2 text-center" th:text="${c.getValue()}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>

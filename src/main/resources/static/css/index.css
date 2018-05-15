@@ -1,0 +1,33 @@
+body {
+    background: url("/img/pic1.jpg") fixed;
+    background-size: cover;
+}
+
+th {
+    font-weight: bold;
+    font-family: Times, serif;
+    font-size: 1.3em;
+    font-variant: small-caps;
+}
+
+td.td1 {
+    font-weight: bold;
+    font-style: italic;
+    background-color: #ffa9a5;
+}
+
+td.td2 {
+    font-weight: bold;
+    background-color: #afdfa1;
+}
+
+p {
+    font-weight: 900;
+    font-family: Times, serif;
+    font-size: 1.7em;
+    font-variant: small-caps;
+    color: teal;
+}
+
+
+

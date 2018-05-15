@@ -1,0 +1,17 @@
+body {
+    background: url("/img/pic1.jpg") fixed;
+    background-size: cover;
+}
+
+th {
+    font-weight: bold;
+    font-family: Times, serif;
+    font-size: 1.3em;
+    font-variant: small-caps;
+}
+
+td {
+    font-weight: bold;
+    background-color: rgba(150,239,196,0.54);
+
+}
